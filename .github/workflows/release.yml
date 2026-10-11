@@ -1,0 +1,70 @@
+name: Build and release desktop apps
+
+# Runs on every push to main, and whenever you press "Run workflow" in the Actions tab.
+# It builds the Windows installer and the macOS app, then attaches them to a GitHub Release.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build ${{ matrix.name }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: Windows
+            os: windows-latest
+            args: ''
+          - name: macOS (Apple Silicon and Intel)
+            os: macos-latest
+            args: '--target universal-apple-darwin'
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.os == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
+
+      - name: Cache Rust build
+        uses: swatinem/rust-cache@v2
+        with:
+          workspaces: './src-tauri -> target'
+
+      - name: Install JavaScript tools
+        run: npm install
+
+      - name: Make the app icons from app-icon.png
+        run: npm run icons
+
+      - name: Build and publish the release
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tagName: v__VERSION__
+          releaseName: 'OCHST Staff __VERSION__'
+          releaseBody: |
+            OCHST Staff desktop app.
+
+            **Windows:** download the `.exe` (setup) file, open it and follow the steps.
+            **Mac:** download the `.dmg` file, open it and drag OCHST Staff into Applications.
+            First time on a Mac: right-click the app, choose Open, then Open again.
+          releaseDraft: false
+          prerelease: false
+          args: ${{ matrix.args }}
