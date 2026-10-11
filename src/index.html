@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OCHST Staff</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 1. Splash -->
+<section id="splash" class="screen active" aria-label="Loading">
+  <div class="rings"><i></i><i></i><i></i></div>
+  <div class="splash-core">
+    <div class="logo-tile"><img src="assets/logo.png" alt=""></div>
+    <h1 class="word" aria-label="OCHST Staff"><span>O</span><span>C</span><span>H</span><span>S</span><span>T</span><span class="sp">&nbsp;</span><span class="g">S</span><span class="g">t</span><span class="g">a</span><span class="g">f</span><span class="g">f</span></h1>
+    <p class="tag">Olivet College of Health Technology</p>
+  </div>
+  <div class="m3-progress" aria-hidden="true"><i></i></div>
+</section>
+
+<!-- 2. Onboarding -->
+<section id="onboarding" class="screen" aria-label="Welcome">
+  <button class="text-btn skip" id="skip" type="button">Skip</button>
+  <div class="ob">
+    <div class="ob-art" id="art">
+      <div class="art-bg"></div>
+
+      <svg class="slide-art s1" viewBox="0 0 320 280" aria-hidden="true">
+        <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a62c0"/><stop offset="1" stop-color="#00264d"/></linearGradient></defs>
+        <rect class="float a" x="70" y="40" width="150" height="196" rx="20" fill="#fff"/>
+        <rect x="92" y="66" width="62" height="10" rx="5" fill="#cfe0f5"/>
+        <rect x="92" y="88" width="106" height="8" rx="4" fill="#e3ecf8"/>
+        <rect x="92" y="106" width="94" height="8" rx="4" fill="#e3ecf8"/>
+        <rect x="92" y="124" width="100" height="8" rx="4" fill="#e3ecf8"/>
+        <g class="float b"><circle cx="208" cy="188" r="44" fill="url(#g1)"/><path class="tick" d="M188 188 l15 15 l27-31" fill="none" stroke="#F3BD00" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></g>
+        <g class="float c"><circle cx="78" cy="206" r="26" fill="#F3BD00"/><circle cx="78" cy="198" r="9" fill="#00264d"/><path d="M60 224 q18-22 36 0" fill="#00264d"/></g>
+        <g class="float d"><path d="M226 56 l40-16 l40 16 l-40 16z" fill="#00264d" transform="translate(-30 4) scale(.9)"/><path d="M246 66 v16 q20 10 40 0 v-16" fill="none" stroke="#00264d" stroke-width="6" transform="translate(-30 4) scale(.9)"/></g>
+      </svg>
+
+      <svg class="slide-art s2" viewBox="0 0 320 280" aria-hidden="true">
+        <rect class="float a" x="40" y="70" width="150" height="150" rx="22" fill="#fff"/>
+        <rect class="bar" x="66" y="150" width="22" height="48" rx="6" fill="#9cc3ec"/>
+        <rect class="bar" x="98" y="124" width="22" height="74" rx="6" fill="#4f8fd6"/>
+        <rect class="bar" x="130" y="100" width="22" height="98" rx="6" fill="#004080"/>
+        <g class="float b"><path d="M196 62 h74 a14 14 0 0 1 14 14 v110 a14 14 0 0 1-14 14 h-74z" fill="#2a6fb8"/><path d="M196 62 v138" stroke="#F3BD00" stroke-width="6"/><rect x="214" y="86" width="52" height="8" rx="4" fill="#cfe0f5"/><rect x="214" y="104" width="40" height="8" rx="4" fill="#cfe0f5"/></g>
+        <g class="float c"><circle cx="236" cy="212" r="38" fill="#F3BD00"/><text x="236" y="226" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="40" fill="#00264d">A</text></g>
+      </svg>
+
+      <svg class="slide-art s3" viewBox="0 0 320 280" aria-hidden="true">
+        <g class="float a"><rect x="40" y="76" width="150" height="104" rx="22" fill="#fff"/><rect x="40" y="102" width="150" height="20" fill="#00264d"/><rect x="58" y="142" width="52" height="10" rx="5" fill="#cfe0f5"/><circle cx="160" cy="148" r="14" fill="#F3BD00"/></g>
+        <g class="float b"><rect x="168" y="150" width="112" height="76" rx="18" fill="#00264d"/><rect x="182" y="176" width="84" height="26" rx="8" fill="#4f8fd6"/><rect x="182" y="164" width="24" height="18" rx="6" fill="#9cc3ec"/></g>
+        <g class="float c"><circle cx="82" cy="218" r="30" fill="#F3BD00"/><path d="M82 200 a14 14 0 0 1 14 14 v10 l6 8 h-40 l6-8 v-10 a14 14 0 0 1 14-14z" fill="#00264d"/><circle cx="82" cy="238" r="4" fill="#00264d"/></g>
+        <g class="float d"><circle cx="236" cy="80" r="26" fill="url(#g1)"/><path d="M226 80 h20 M236 70 v20" stroke="#fff" stroke-width="6" stroke-linecap="round"/></g>
+      </svg>
+    </div>
+
+    <div class="ob-copy">
+      <div class="track" id="track">
+        <article class="slide" data-i="0">
+          <p class="eyebrow">Admissions</p>
+          <h2>Admissions and students, sorted</h2>
+          <p>Review applications, admit candidates and send offers in a few clicks. Add students who were already at the school, one by one or from a spreadsheet.</p>
+        </article>
+        <article class="slide" data-i="1">
+          <p class="eyebrow">Academics</p>
+          <h2>Courses, lecturers and results</h2>
+          <p>Set up programmes, sessions and courses, assign lecturers, and let them upload scores. Publish results when they are ready for students.</p>
+        </article>
+        <article class="slide" data-i="2">
+          <p class="eyebrow">Fees and campus</p>
+          <h2>Fees, hostels and notices</h2>
+          <p>Follow school fee payments, set fees for every programme and level, manage hostel beds, and post notices that students see straight away.</p>
+        </article>
+      </div>
+
+      <div class="ob-nav">
+        <div class="dots" id="dots" role="tablist" aria-label="Slides"><i class="on"></i><i></i><i></i></div>
+        <div class="ob-btns">
+          <button class="tonal-btn" id="back" type="button" hidden>Back</button>
+          <button class="filled-btn" id="next" type="button"><span id="nextLabel">Next</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Connecting / offline -->
+<section id="connect" class="screen" aria-live="polite">
+  <div class="connect-card">
+    <div class="state loading">
+      <div class="spinner" aria-hidden="true"></div>
+      <h2>Opening the staff portal</h2>
+      <p>Just a moment…</p>
+    </div>
+    <div class="state offline" hidden>
+      <div class="off-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 8.8a15 15 0 0 1 20 0M5 12.4a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="19.5" r="1.4" fill="currentColor"/><path d="M3 3l18 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></div>
+      <h2>You are offline</h2>
+      <p>Check your internet connection, then try again.</p>
+      <button class="filled-btn" id="retry" type="button">Try again</button>
+    </div>
+  </div>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
