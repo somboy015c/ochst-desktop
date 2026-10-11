@@ -21,6 +21,11 @@ const HIDE_DOWNLOAD: &str = r#"
   }
   add();
   document.addEventListener('DOMContentLoaded', add);
+  // Reload shortcuts that every browser has (Mac webviews do not): Cmd/Ctrl+R, Cmd/Ctrl+Shift+R, F5.
+  document.addEventListener('keydown', function (e) {
+    var k = (e.key || '').toLowerCase();
+    if (((e.metaKey || e.ctrlKey) && k === 'r') || k === 'f5') { e.preventDefault(); location.reload(); }
+  });
 })();
 "#;
 

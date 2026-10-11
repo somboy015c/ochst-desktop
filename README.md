@@ -40,9 +40,6 @@ Change `version` in `src-tauri/tauri.conf.json` (and `src-tauri/Cargo.toml`), co
 * **Windows** may show "Windows protected your PC": choose **More info → Run anyway**.
 * **macOS** may say the app cannot be opened: right-click the app, choose **Open**, then **Open**. If it says the app is "damaged", run `xattr -cr "/Applications/OCHST Staff.app"` once in Terminal.
 
-Removing these warnings needs paid developer certificates (Apple Developer, Windows code signing).
-`tauri-action` supports them through repository secrets when you decide to buy them.
-
 ## Run it on your own computer (optional)
 
 ```
@@ -51,3 +48,10 @@ npm run icons
 npm run dev
 ```
 You need Node 20+ and [Rust](https://rustup.rs). On Windows, also the "Desktop development with C++" build tools.
+
+## If the app shows an old version of the portal
+
+The app shows the live website, so website updates need no new build. If it still looks old, press **Cmd+R** (Mac) or **Ctrl+R** (Windows).
+For a full clean-out, quit the app and delete its stored data, then open it again (you will have to sign in again):
+* **Mac:** delete the folders `~/Library/WebKit/ng.edu.ochst.staff` and `~/Library/Caches/ng.edu.ochst.staff` (in Finder choose Go, Go to Folder, and paste the path).
+* **Windows:** delete the folder `%LOCALAPPDATA%\ng.edu.ochst.staff`.
